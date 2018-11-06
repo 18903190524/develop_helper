@@ -48,7 +48,7 @@ public class runEverything {
         // ----product----
         // copyToPath("E:\\服务器备份\\配置\\3 生产配置\\product_provider");
         // copyToPath("E:\\服务器备份\\配置\\3 生产配置\\product_admin");
-        // copyToPath("E:\\服务器备份\\配置\\3 生产配置\\product_pc");
+//         copyToPath("E:\\服务器备份\\配置\\3 生产配置\\product_pc");
         // ----test----
         // copyToPath("E:\\服务器备份\\配置\\2 测试配置\\provider");
         // ----develop----
