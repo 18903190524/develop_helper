@@ -36,9 +36,11 @@ public class TTSUtils {
 	public static void readStringsIntoList(String filepath) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(filepath));
 		String line;
+		int  i = 1;
 		while ((line = br.readLine()) != null) {
 			// 语音 运行出所有字符串 用于保存语音文件
-			TTSUtils.saveSpeakFile(line);
+			TTSUtils.saveSpeakFile(line,i);
+			i++;
 		}
 		br.close();
 	}
@@ -48,12 +50,12 @@ public class TTSUtils {
 	 * @param text
 	 * @throws IOException
 	 */
-	public static void saveSpeakFile(String text) throws IOException {
+	public static void saveSpeakFile(String text,int i) throws IOException {
 
 		//===========保存文件版==========
 		String format = "PowerShell -Command \"Add-Type –AssemblyName System.Speech; $PowerShellSpeak = New-Object System.Speech.Synthesis.SpeechSynthesizer; $PowerShellSpeak.SetOutputToWaveFile('D:\\audio\\%s.wav'); $PowerShellSpeak.Speak('%s');%s\"";
 		String format_2 = "$PowerShellSpeak.SetOutputToDefaultAudioDevice();";
-		String command = String.format(format, text, text,format_2);
+		String command = String.format(format, i+" "+text, text,format_2);
 		//===================================
 		// 提示
 		// System.out.println("开始朗读: " + text);
